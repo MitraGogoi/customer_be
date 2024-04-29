@@ -54,7 +54,7 @@ export class CdkDeplStack extends cdk.Stack {
       {
         taskImageOptions: {
           image: ecs.ContainerImage.fromEcrRepository(repository),
-          containerPort: 3000,
+          containerPort: 80,
         },
         memoryLimitMiB: 512,
         cpu: 256,
