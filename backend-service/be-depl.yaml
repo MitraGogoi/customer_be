@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: customerapp
+  name: customer-ms
   namespace: devx
   labels:
-    role: customerapp
+    role: customer-ms
     env: demo
 spec:
   replicas: 1
@@ -15,14 +15,14 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels:
-      role: customerapp
+      role: customer-ms
   template:
     metadata:
       labels:
-        role: customerapp
+        role: customer-ms
     spec:
       containers:
-        - name: customerapp
+        - name: customer-ms
           image: public.ecr.aws/p4r4w8l8/customer-svc:latest
           imagePullPolicy: Always
           ports:
