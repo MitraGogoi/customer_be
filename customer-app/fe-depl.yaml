@@ -23,19 +23,19 @@ spec:
     spec:
       containers:
         - name: customerapp
-          image: public.ecr.aws/p4r4w8l8/customer-app:latest
+          image: public.ecr.aws/p4r4w8l8/customer-svc:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 3000
+            - containerPort: 8000
           livenessProbe:
             httpGet:
               path: /
-              port: 3000
+              port: 8000
             initialDelaySeconds: 2
             periodSeconds: 5
           readinessProbe:
             httpGet:
               path: /
-              port: 3000
+              port: 8000
             initialDelaySeconds: 5
             periodSeconds: 5
